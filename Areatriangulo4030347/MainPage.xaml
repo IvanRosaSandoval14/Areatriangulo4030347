@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:viewmodel="clr-namespace:Areatriangulo4030347.ViewModels"
+             x:Class="Areatriangulo4030347.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewmodel:MainViewModel/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <Image Source="triangulo.jfif" 
+                   HeightRequest="185" 
+                   Aspect="AspectFit" 
+                   SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Label Text="Ingrese los lados del triángulo:" 
+                   Style="{StaticResource Headline}" 
+                   SemanticProperties.HeadingLevel="Level1" />
+
+            <Entry Placeholder="Ingrese el Primer Lado" 
+                   Keyboard="Numeric" 
+                   Text="{Binding Side1}" />
+            <Entry Placeholder="Ingrese el Segundo Lado" 
+                   Keyboard="Numeric" 
+                   Text="{Binding Side2}" />
+            <Entry Placeholder="Ingrese el Tercer Lado" 
+                   Keyboard="Numeric" 
+                   Text="{Binding Side3}" />
+
+            <Button Text="Calcular Área" 
+                    Command="{Binding CalculateAreaCommand}" 
+                    HorizontalOptions="Fill" />
+
+            <Label Text="{Binding Result}" 
+                   Style="{StaticResource SubHeadline}" 
+                   SemanticProperties.HeadingLevel="Level2" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
